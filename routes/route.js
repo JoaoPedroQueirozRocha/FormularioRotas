@@ -4,6 +4,6 @@ const router = express.Router()
 const controller = require('../controller/controller')
 
 router.get('/', controller.RespostaHTML)
-router.get('/Usuarios', controller.PesquisarContato)
+router.get('/users', controller.PesquisarContato)
 
 module.exports = router

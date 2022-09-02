@@ -32,15 +32,15 @@ app.post('/', async(req, res, next)=>{
             res.render('index', {mensagem:mensagem, message:null});
             res.end()
         }else{
-            users ={
-                id: dataBase.nextId++,
+            user ={
+                id: users.nextID++,
                 username: username,
                 email: email
             };
-            dataBase.users.push(users)
+            users.users.push(user)
             await fs.writeFileSync('models/dataBase.json', JSON.stringify(users, null, 2))
             console.log("Contato adicionado com sucesso")
-            res.render('index')
+            res.render('index', {mensagem:null, message:null})
             res.end()
         }
     } catch (error) {
