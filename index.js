@@ -7,11 +7,10 @@ const route = require('./routes/route')
 const bodyParser = require('body-parser')
 const path = require('path')
 const fs = require('fs')
-const expressLayouts = require('express-ejs-layouts')
+
 
 app.use(express.json());
 app.use('/', route);
-app.use(expressLayouts)
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 app.use(bodyParser.urlencoded({extended:true}))
@@ -40,7 +39,7 @@ app.post('/', async(req, res, next)=>{
             users.users.push(user)
             await fs.writeFileSync('models/dataBase.json', JSON.stringify(users, null, 2))
             console.log("Contato adicionado com sucesso")
-            res.render('index', {mensagem:null, message:null})
+            res.render('index')
             res.end()
         }
     } catch (error) {

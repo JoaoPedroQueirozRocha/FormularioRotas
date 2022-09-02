@@ -35,8 +35,6 @@ exports.PesquisarContato = async(req, res,next)=>{
             res.end()
         }else{
             let user = cadastros.users.filter(a => a.username == username)
-            console.log(user)
-            console.log(cadastros)
             res.render('users', {user:user, username:username})
             res.end()
         }
