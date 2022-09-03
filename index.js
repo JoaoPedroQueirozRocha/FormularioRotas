@@ -7,18 +7,19 @@ const route = require('./routes/route')
 const bodyParser = require('body-parser')
 const path = require('path')
 const fs = require('fs')
-
+const cors = require('cors')
 
 app.use(express.json());
 app.use('/', route);
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
+app.use(cors())
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, 'views')));
 app.use(express.static('public'))
 
-app.post('/', async(req, res, next)=>{
+app.post('/teste', async(req, res, next)=>{
     try {
         const username = req.body.username;
         const email = req.body.email;
@@ -39,7 +40,7 @@ app.post('/', async(req, res, next)=>{
             users.users.push(user)
             await fs.writeFileSync('models/dataBase.json', JSON.stringify(users, null, 2))
             console.log("Contato adicionado com sucesso")
-            res.render('index')
+            res.render('index',{mensagem: "Cadastrado com sucesso",message: null})
             res.end()
         }
     } catch (error) {

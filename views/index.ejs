@@ -5,22 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../public/style.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
     <form action="/users" method="get">
-        <input type="text" name="username">
+        <input type="text" name="pesquisa">
         <button type="submit">Pesquisar</button>
         <label><%=message%></label>
     </form>
     <br>
     <br>
-    <form action="/" method="post">
-        <label for="username">Nome:</label>
+    <form action="/teste" method="post">
+        <label>Nome:</label>
         <input type="text" name="username">
-        <label for="email">E-mail</label>
+        <label>E-mail</label>
         <input type="text" name="email">
-        <button type="submit"><a href="/">Adicionar</a></button>
+        <button type="submit">Adicionar</button>
         <label><%=mensagem%></label>
     </form>
 </body>

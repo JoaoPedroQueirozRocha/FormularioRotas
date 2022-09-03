@@ -1,25 +1,10 @@
 {
-  "nextID": 14,
+  "nextID": 2,
   "users": [
     {
-      "id": 7,
-      "username": "Casdrata",
-      "email": "casdrata@calamidade"
-    },
-    {
-      "id": 8,
-      "username": "Carol a Casdrata",
-      "email": "casdrata@calamidade"
-    },
-    {
-      "id": 12,
+      "id": 1,
       "username": "Siesta",
-      "email": "sistaTemAindaMaisMedoDoCasdrata"
-    },
-    {
-      "id": 13,
-      "username": "",
-      "email": ""
+      "email": "j@gmail.com"
     }
   ]
 }
